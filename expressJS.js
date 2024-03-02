@@ -18,6 +18,8 @@ app.get('/users/:id', (req, res) => {
         });
     }
 });
+//API tạo user với các thông tin như trên users, với id là random (uuid), 
+//email là duy nhất, phải kiểm tra được trùng email khi tạo user.
 app.post('/users/createUser', (req, res) => {
     const { userName, email, age, avatar } = req.body || {};
     const exitingUser = users.find(item => item.email === email);
